@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	text-align: center;
+	background-color: cornsilk;
+}
+
+li {
+	margin: 10px;
+	list-style-type: none;
+}
+
+/* .notdevoured {
+	float: left;
+} */
+
+.burgerphoto {
+	max-width: 450px;
+	max-height: 450px;
+}
