@@ -13,10 +13,8 @@ var burger = {
 		orm.updateOne("burgers", colToUpdate, valToUpdate, id, (res) => cb(res));
 	},
 
-	deleteOne: (colInput, valToDelete, cb) => {
-		orm.deleteOne("burgers", colInput, valToDelete, (res) => {
-			cb(res);
-		});
+	deleteOne: (colInput, id, cb) => {
+		orm.deleteOne("burgers", colInput, id, (res) => cb(res));
 	},
 };
 

@@ -22,8 +22,8 @@ router.put("/api/burgers/:id", (req, res) => {
 });
 
 router.delete("/api/burgers/:id", (req, res) => {
-	burger.deleteOne(["id"], [req.params.id], function (result) {
-		result.changedRows == 0 ? res.status(404).end : res.status(200).end();
+	burger.deleteOne(["id"], [req.params.id], (result) => {
+		result.affectedRows == 0 ? res.status(404).end : res.status(200).end();
 	});
 });
 

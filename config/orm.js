@@ -36,18 +36,14 @@ var orm = {
 			}
 		);
 	},
-	deleteOne: (tableInput, colInput, valToDelete, cb) => {
+	deleteOne: (tableInput, colInput, id, cb) => {
 		var queryString = "DELETE FROM ?? WHERE ?? = ?";
-		connection.query(
-			queryString,
-			[tableInput, colInput, valToDelete],
-			(err, result) => {
-				if (err) {
-					throw err;
-				}
-				cb(result);
+		connection.query(queryString, [tableInput, colInput, id], (err, result) => {
+			if (err) {
+				throw err;
 			}
-		);
+			cb(result);
+		});
 	},
 };
 
