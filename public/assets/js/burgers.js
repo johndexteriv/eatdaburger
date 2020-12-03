@@ -26,4 +26,15 @@ $(function () {
 			location.reload();
 		});
 	});
+	$(".delete").on("click", function (event) {
+		var id = $(this).data("id");
+		console.log(id);
+
+		$.ajax("/api/burgers/" + id, {
+			type: "DELETE",
+		}).then(function () {
+			console.log(`The Burger with ${id} was deleted`);
+			location.reload();
+		});
+	});
 });

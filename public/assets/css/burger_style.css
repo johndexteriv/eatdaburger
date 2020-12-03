@@ -12,11 +12,22 @@ li {
 	list-style-type: none;
 }
 
-/* .notdevoured {
-	float: left;
-} */
+.container {
+	display: flex;
+}
+
+.notdevoured {
+	flex: 1;
+	margin-top: 10px;
+}
+
+.devoured {
+	flex: 1;
+	margin-top: 10px;
+}
 
 .burgerphoto {
 	max-width: 450px;
 	max-height: 450px;
+	margin-bottom: 10px;
 }
