@@ -6,9 +6,14 @@
 
     <div class="notdevoured">
         <h3>Burgers Waiting to be Devoured!</h3>
+
+
         <ul>
             {{#each burgers}}
-            <li>{{burger_name}} <button class="devour" data-id={{id}}>Devour It!</button></li>
+            {{#unless devoured}}
+            <li>{{burger_name}} <button class="devour" data-id={{id}}>Devour It !</button></li>
+            {{/unless}}
+
             {{/each}}
         </ul>
     </div>
@@ -18,7 +23,7 @@
         <ul>
             {{#each burgers}}
             {{#if devoured}}
-            <li>{{burger_name}}</li>
+            <li>{{burger_name}} <button class="delete">Remove It !</button></li>
             {{/if}}
             {{/each}}
         </ul>

@@ -2,6 +2,14 @@ $(function () {
 	$(".devour").on("click", function (event) {
 		var id = $(this).data("id");
 		console.log(id);
+
+		$.ajax("/api/burgers/" + id, {
+			type: "PUT",
+		}).then(function () {
+			console.log(`The Burger with ${id} id was devoured`);
+
+			location.reload();
+		});
 	});
 	$(".create-form").on("submit", function (event) {
 		event.preventDefault();
