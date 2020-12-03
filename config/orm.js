@@ -1,21 +1,21 @@
 var connection = require("../config/connection.js");
 
 var orm = {
-	selectAll: function (tableInput, cb) {
+	selectAll: (tableInput, cb) => {
 		var queryString = "SELECT * FROM ??";
-		connection.query(queryString, [tableInput], function (err, result) {
+		connection.query(queryString, [tableInput], (err, result) => {
 			if (err) {
 				throw err;
 			}
 			cb(result);
 		});
 	},
-	insertOne: function (tableInput, colInput, values, cb) {
+	insertOne: (tableInput, colInput, values, cb) => {
 		var queryString = "INSERT INTO ?? (??) VALUES (?)";
 		connection.query(
 			queryString,
 			[tableInput, colInput, values],
-			function (err, result) {
+			(err, result) => {
 				if (err) {
 					throw err;
 				}
@@ -23,12 +23,12 @@ var orm = {
 			}
 		);
 	},
-	updateOne: function (tableInput, colToUpdate, valToUpdate, id, cb) {
+	updateOne: (tableInput, colToUpdate, valToUpdate, id, cb) => {
 		var queryString = "UPDATE ?? SET ?? = ? WHERE id = ?";
 		connection.query(
 			queryString,
 			[tableInput, colToUpdate, valToUpdate, id],
-			function (err, result) {
+			(err, result) => {
 				if (err) {
 					throw err;
 				}
@@ -36,7 +36,7 @@ var orm = {
 			}
 		);
 	},
-	deleteOne: function (tableInput, colInput, valToDelete, cb) {
+	deleteOne: (tableInput, colInput, valToDelete, cb) => {
 		var queryString = "DELETE FROM ?? WHERE ?? = ?";
 		connection.query(
 			queryString,
